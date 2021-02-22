@@ -1,9 +1,7 @@
 /*
- * Query & Mutation Example
- * 예시로 GQL Code Generator로 가져온 두개의 데이터 모델을 사용.
+ * GraphQL Code Generator TypeScript Example
 ​ */
 
-// GQL Code Generator Example Model Start
 export type Maybe<T> = T | null | undefined;
 
 export interface Scalars {
@@ -26,16 +24,19 @@ export interface ProjectModel {
   projectDesc?: Maybe<Scalars['String']>,
   projectEnable?: Maybe<Scalars['Boolean']>,
 }
-// GQL Code Generator Example Model End
 
-/*
- * Query (REST API => GET)
-​ */
-const query = ``;
+// Example Query
+export interface Query {
+  memberModelQuery?: Maybe<Array<Maybe<MemberModel>>>,
+  projectModelQuery?: Maybe<ProjectModel>,
+}
 
-/*
- * Mutation (REST API => POST, PUT, DELETE)
-​ */
-const mutation = ``;
+export interface QueryMemberModelQueryArgs {
+  memberId: Scalars['String']
+}
 
-// Incomplete
+// Example Mutation
+export interface Mutation {
+  MemberModelDelete: Scalars['Boolean'],
+  MemberModelSave?: Maybe<MemberModel>,
+}
