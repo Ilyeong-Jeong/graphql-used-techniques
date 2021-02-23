@@ -17,6 +17,14 @@ export interface MemberModel {
   memberEnable?: Maybe<Scalars['Boolean']>,
 }
 
+// Example MemberModelInput
+export interface MemberModelInput {
+  memberId?: Maybe<Scalars['String']>,
+  memberName?: Maybe<Scalars['String']>,
+  memberDesc?: Maybe<Scalars['String']>,
+  memberEnable?: Maybe<Scalars['Boolean']>,
+}
+
 // Example ProjectModel
 export interface ProjectModel {
   projectId?: Maybe<Scalars['String']>,
@@ -39,4 +47,12 @@ export interface QueryMemberModelQueryArgs {
 export interface Mutation {
   MemberModelDelete: Scalars['Boolean'],
   MemberModelSave?: Maybe<MemberModel>,
+}
+
+export interface MutationMemberModelDeleteArgs {
+  memberId: Scalars['String']
+}
+
+export interface MutationMemberModelSaveArgs {
+  MemberModel: MemberModelInput
 }
